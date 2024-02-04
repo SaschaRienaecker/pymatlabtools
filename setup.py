@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pymatlabtools',
+    name='matlabtools',
     version='1.0.0',
     author='SR',
     description="A Python library designed to simplify the interaction between python and matlab usage.",
