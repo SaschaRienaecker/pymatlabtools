@@ -275,7 +275,7 @@ def run_matlab_script(cmd, cmd_prefix='matlab -nodesktop -nosplash -r', addpath=
     # return full_cmd
     return run_as_subprocess(full_cmd, logdir, verbose)
 
-def run_matlab_code(matlab_code, logdir=None, verbose=True):
+def run_matlab_code(matlab_code, logdir=None, cmd_prefix='matlab -nodesktop -nosplash -r', verbose=True):
     """
     Executes given MATLAB code on-the-fly and returns the result.
     
@@ -338,7 +338,7 @@ def run_matlab_code(matlab_code, logdir=None, verbose=True):
         # eng.cd(matlab_file_dir)
         
         # fail_bool = None
-        fail_bool = run_matlab_script(fname, addpath=str(matlab_file_dir), logdir=logdir, verbose=verbose)
+        fail_bool = run_matlab_script(fname, addpath=str(matlab_file_dir), cmd_prefix=cmd_prefix, logdir=logdir, verbose=verbose)
         # result = None
         
         if not fail_bool:
