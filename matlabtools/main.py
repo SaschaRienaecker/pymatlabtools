@@ -229,7 +229,8 @@ def run_as_subprocess(cmd, logdir='./log', verbose=True):
 
         log_fname = logdir / "{}.txt".format(dt_string)
     
-    print(f'Starting subprocess with command "{cmd}" \n')
+    if verbose:
+        print(f'Starting subprocess with command:\n"{cmd}"\n')
 
     try:
         if verbose:
