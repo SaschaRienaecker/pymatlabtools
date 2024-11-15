@@ -351,7 +351,9 @@ def run_matlab_code(matlab_code, logdir=None, cmd_prefix='matlab -nodesktop -nos
         
 
     except Exception as e:
-        raise e
+        import traceback
+        traceback.print_exc()
+        print(f"Error while running the MATLAB code: {e}")
     finally:
         os.remove(matlab_file_path)
         pass
